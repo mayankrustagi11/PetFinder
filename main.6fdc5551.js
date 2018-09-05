@@ -299,7 +299,7 @@ function showAnimals(pets) {
     pets.forEach(function (pet) {
         var div = document.createElement('div');
         div.classList.add('card', 'card-body', 'mb-3');
-        div.innerHTML = '\n            <div class="row">\n                <div class="col-sm-6">\n                    <h4>' + pet.name.$t + ' (' + pet.age.$t + ')</h4>\n                    <p class="text-secondary">' + (pet.breeds.breed.$t ? pet.breeds.breed.$t : '') + '</p>\n                    <p>' + (pet.contact.address1.$t ? pet.contact.address1.$t : '') + ' ' + (pet.contact.city.$t ? pet.contact.city.$t : '') + ' ' + (pet.contact.state.$t ? pet.contact.state.$t : '') + ' ' + (pet.contact.zip.$t ? pet.contact.zip.$t : '') + '</p>\n                    <ul class="list-group">\n                        <li class="list-group-item">Phone: ' + pet.contact.phone.$t + '</li>\n                        ' + (pet.contact.email.$t ? '<li class="list-group-item">Email: ' + pet.contact.email.$t + '</li>' : '') + '\n                        <li class="list-group-item">Shelter Id: ' + pet.shelterId.$t + '</li>\n                    </ul>\n                </div>\n                <div class="col-sm-6 text-center">\n                    ' + (pet.media.photos ? '<img class="img-fluid rounded-circle mt-2" src="' + pet.media.photos.photo[3].$t + '">' : '') + '\n                </div> \n            </div>\n        ';
+        div.innerHTML = '\n            <div class="row">\n                <div class="col-sm-6">\n                    <h4>' + pet.name.$t + ' (' + pet.age.$t + ')</h4>\n                    <p class="text-secondary">' + (pet.breeds.breed.$t ? pet.breeds.breed.$t : '') + '</p>\n                    <p>' + (pet.contact.address1.$t ? pet.contact.address1.$t : '') + ' ' + (pet.contact.city.$t ? pet.contact.city.$t : '') + ' ' + (pet.contact.state.$t ? pet.contact.state.$t : '') + ' ' + (pet.contact.zip.$t ? pet.contact.zip.$t : '') + '</p>\n                    <ul class="list-group">\n                        <li class="list-group-item">Phone: ' + pet.contact.phone.$t + '</li>\n                        ' + (pet.contact.email.$t ? '<li class="list-group-item">Email: ' + pet.contact.email.$t + '</li>' : '') + '\n                        <li class="list-group-item">Shelter Id: ' + pet.shelterId.$t + '</li>\n                    </ul>\n                </div>\n                <div class="col-sm-6 text-center">\n                    ' + (pet.media.photos ? '<img class="img-fluid rounded-circle mt-2" src="' + pet.media.photos.photo[3].$t.replace('http', 'https') + '">' : '') + '\n                </div> \n            </div>\n        ';
 
         results.appendChild(div);
     });
@@ -333,7 +333,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '57911' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '59452' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
