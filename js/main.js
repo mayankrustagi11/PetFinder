@@ -47,7 +47,7 @@ function showAnimals(pets) {
                     </ul>
                 </div>
                 <div class="col-sm-6 text-center">
-                    ${pet.media.photos ? `<img class="img-fluid rounded-circle mt-2" src="${pet.media.photos.photo[3].$t}">` : ''}
+                    ${pet.media.photos ? `<img class="img-fluid rounded-circle mt-2" src="${pet.media.photos.photo[3].$t.replace('http', 'https')}">` : ''}
                 </div> 
             </div>
         `;
