@@ -15,7 +15,7 @@ function fetchAnimals(e) {
     const zip = document.getElementById('zip-form').value;
 
     if (!isValidZip(zip)) {
-        showAlert('Please Enter A Valid ZipCode', 'alert-danger');
+        showAlert('Please Enter A Valid ZipCode. Only USA zipcodes are allowed.', 'alert-danger');
         return;
     }
 
@@ -38,8 +38,8 @@ function showAnimals(pets) {
             <div class="row">
                 <div class="col-sm-6">
                     <h4>${pet.name.$t} (${pet.age.$t})</h4>
-                    <p class="text-secondary">${pet.breeds.breed.$t}</p>
-                    <p>${pet.contact.address1.$t} ${pet.contact.city.$t} ${pet.contact.state.$t} ${pet.contact.zip.$t}</p>
+                    <p class="text-secondary">${pet.breeds.breed.$t ? pet.breeds.breed.$t : ''}</p>
+                    <p>${pet.contact.address1.$t ? pet.contact.address1.$t : ''} ${pet.contact.city.$t ? pet.contact.city.$t : ''} ${pet.contact.state.$t ? pet.contact.state.$t : ''} ${pet.contact.zip.$t ? pet.contact.zip.$t : ''}</p>
                     <ul class="list-group">
                         <li class="list-group-item">Phone: ${pet.contact.phone.$t}</li>
                         ${pet.contact.email.$t ? `<li class="list-group-item">Email: ${pet.contact.email.$t}</li>` : ``}
